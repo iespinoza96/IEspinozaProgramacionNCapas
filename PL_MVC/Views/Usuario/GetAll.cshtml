@@ -1,0 +1,140 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>Usuario</h2>
+    </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h5>Seleccione un Usuario para editarlo o + para agregar un Usuario...</h5>
+    </div>
+</div>
+</div>
+
+<br />
+<br />
+<div class="container">
+    @using (Html.BeginForm("GetAll", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <div class="col-md-3">
+                <div></div>
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre", @autocomplete = "off", @placeholder = "Nombre"})
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+            
+                @Html.TextBoxFor(model => model.ApellidoPaterno, new { @class = "form-control", @id = "txtApellidoPaterno", @autocomplete = "off", @placeholder = "Apellido Paterno" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.ApellidoMaterno, new { @class = "form-control", @id = "txtApellidoMaterno", @autocomplete = "off", @placeholder = "Apellido Materno" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <input type="submit" value="Buscar" class="btn btn-info" />
+                </div>
+            </div>
+    }
+</div>
+<br />
+<br />
+
+<div class="container">
+    @using (Html.BeginForm("CargaMasiva", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <div class="col-md-3">
+               
+              <a><input type="file" name="Archivo"></a>
+            </div>
+
+            <a><input type="submit" value="Cargar Archivo" class="btn btn-info"></a>
+        </div>
+    }
+</div>
+
+<br />
+<br />
+        <div class="container">
+            <div style="float:right">
+                @Html.ActionLink("+", "Form", "Usuario", htmlAttributes: new { @class = "btn btn-success" })
+            </div>
+
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <td class="text-center" style=" font-weight:bold;">Editar</td>
+
+                        <td class="text-center" style=" font-weight:bold;">UserName</td>
+                        <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                        <td class="text-center" style=" font-weight:bold;">Apellido Paterno</td>
+                        <td class="text-center" style=" font-weight:bold;">Apellido Materno</td>
+                        <td class="text-center" style=" font-weight:bold;">Email</td>
+                        <td class="hidden">Password</td>
+                        <td class="text-center" style=" font-weight:bold;">Fecha de nacimiento</td>
+                        <td class="text-center" style=" font-weight:bold;">Teléfono</td>
+                        <td class=" text-center" style=" font-weight:bold;">Sexo</td>
+                        <td class="text-center" style=" font-weight:bold;">Status</td>
+                        <td class="text-center" style=" font-weight:bold;">Rol</td>
+
+                        <td class="text-center" style=" font-weight:bold;">Eliminar</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (ML.Usuario usuario in Model.Usuarios)
+                    {
+                        <tr>
+                            <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Usuario", new { UserName = usuario.UserName })"></a></td>
+
+                            <td>@usuario.UserName</td>
+                            <td>@usuario.Nombre</td>
+                            <td>@usuario.ApellidoPaterno</td>
+                            <td>@usuario.ApellidoMaterno</td>
+                            <td>@usuario.Email</td>
+                            <td class="hidden">@usuario.Password</td>
+                            <td>@usuario.FechaNacimiento.ToString("dd/MM/yyy")</td>
+                            <td>@usuario.Telefono</td>
+                            <td>@usuario.Sexo</td>
+                            <td>
+                                @if (usuario.Status)
+                                {
+                                    <a href="@Url.Action("UpdateStatus", "Usuario" ,new {UserName = usuario.UserName})"><img src="~/Img/activo.jpg" style=" height:50px; width: 100px;"> </a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("UpdateStatus", "Usuario" ,new {UserName = usuario.UserName})"><img src="~/Img/inactivo.jpg" style=" height:50px; width: 100px;"> </a>
+                                }
+                            </td>
+                            <td>@usuario.Rol.IdRol</td>
+
+                            @* @if (producto.Imagen != null)
+                                {
+                                    <td><img src="data:image/jpeg;base64,@Convert.ToBase64String(producto.Imagen)" style=" height:150px; width: 150px;" /></td>
+                                }
+                                else
+                                {
+                                    <td><img src="~/Content/SIN-IMAGEN.jpg" style=" height:150px; width:150px;" /></td>
+                                }*@
+
+                            <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Usuario", new { UserName = usuario.UserName})" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+

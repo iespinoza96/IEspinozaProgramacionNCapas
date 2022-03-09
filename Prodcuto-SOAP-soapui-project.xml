@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3e626ba5-6769-4e67-8f96-fe7391be1bf4" activeEnvironment="Default" name="Prodcuto SOAP" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9eb192c8-1cd5-4dbf-8671-7e3297e2ccdf" wsaVersion="NONE" name="BasicHttpBinding_IProducto" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IProducto" soapVersion="1_1" anonymous="optional" definition="http://localhost:10028/Producto.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:10028/Producto.svc?singleWsdl"><con:part><con:url>http://localhost:10028/Producto.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Producto" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ML"/>
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+      <xs:element name="AddEF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="producto" nillable="true" type="q1:Producto" xmlns:q1="http://schemas.datacontract.org/2004/07/ML"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddEFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AddEFResult" nillable="true" type="q2:Result" xmlns:q2="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="producto" nillable="true" type="q3:Producto" xmlns:q3="http://schemas.datacontract.org/2004/07/ML"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateEFResult" nillable="true" type="q4:Result" xmlns:q4="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="producto" nillable="true" type="q5:Producto" xmlns:q5="http://schemas.datacontract.org/2004/07/ML"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DeleteEFResult" nillable="true" type="q6:Result" xmlns:q6="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllEF">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllEFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetAllEFResult" nillable="true" type="q7:Result" xmlns:q7="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetByIdEF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IdProducto" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetByIdEFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetByIdEFResult" nillable="true" type="q8:Result" xmlns:q8="http://schemas.datacontract.org/2004/07/SL_WCF"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ML" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ML">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:complexType name="Producto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="tns:Departamento"/>
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdProducto" type="xs:int"/>
+          <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary"/>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Productos" nillable="true" type="q1:ArrayOfanyType" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor"/>
+          <xs:element minOccurs="0" name="Stock" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Producto" nillable="true" type="tns:Producto"/>
+      <xs:complexType name="Departamento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Area" nillable="true" type="tns:Area"/>
+          <xs:element minOccurs="0" name="Departamentos" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="IdDepartamento" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Departamento" nillable="true" type="tns:Departamento"/>
+      <xs:complexType name="Area">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Areas" nillable="true" type="q3:ArrayOfanyType" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="IdArea" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Area" nillable="true" type="tns:Area"/>
+      <xs:complexType name="Proveedor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdProveedor" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Proveedores" nillable="true" type="q4:ArrayOfanyType" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Proveedor" nillable="true" type="tns:Proveedor"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:complexType name="ArrayOfanyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SL_WCF" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SL_WCF">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:complexType name="Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Correct" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Ex" nillable="true" type="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+          <xs:element minOccurs="0" name="Object" nillable="true" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="Objects" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Result" nillable="true" type="tns:Result"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip"/>
+        </xs:sequence>
+        <xs:attribute ref="ser:FactoryType"/>
+      </xs:complexType>
+      <xs:element name="Exception" nillable="true" type="tns:Exception"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IProducto_AddEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEF"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_AddEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEFResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_UpdateEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEF"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_UpdateEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEFResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_DeleteEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEF"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_DeleteEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEFResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_GetAllEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEF"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_GetAllEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEFResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_GetByIdEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdEF"/>
+  </wsdl:message>
+  <wsdl:message name="IProducto_GetByIdEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdEFResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IProducto">
+    <wsdl:operation name="AddEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/AddEF" message="tns:IProducto_AddEF_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/AddEFResponse" message="tns:IProducto_AddEF_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/UpdateEF" message="tns:IProducto_UpdateEF_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/UpdateEFResponse" message="tns:IProducto_UpdateEF_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/DeleteEF" message="tns:IProducto_DeleteEF_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/DeleteEFResponse" message="tns:IProducto_DeleteEF_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/GetAllEF" message="tns:IProducto_GetAllEF_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/GetAllEFResponse" message="tns:IProducto_GetAllEF_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/GetByIdEF" message="tns:IProducto_GetByIdEF_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/GetByIdEFResponse" message="tns:IProducto_GetByIdEF_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProducto" type="tns:IProducto">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddEF">
+      <soap:operation soapAction="http://tempuri.org/IProducto/AddEF" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEF">
+      <soap:operation soapAction="http://tempuri.org/IProducto/UpdateEF" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEF">
+      <soap:operation soapAction="http://tempuri.org/IProducto/DeleteEF" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEF">
+      <soap:operation soapAction="http://tempuri.org/IProducto/GetAllEF" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdEF">
+      <soap:operation soapAction="http://tempuri.org/IProducto/GetByIdEF" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Producto">
+    <wsdl:port name="BasicHttpBinding_IProducto" binding="tns:BasicHttpBinding_IProducto">
+      <soap:address location="http://localhost:10028/Producto.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint></con:endpoints><con:operation id="b7590aea-8f1a-490b-8224-4b513e731336" isOneWay="false" action="http://tempuri.org/IProducto/AddEF" name="AddEF" bindingOperationName="AddEF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="42c3e7a2-4773-44dc-827c-a566b211eeec" name="Add"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:AddEF>\r
+         <!--Optional:-->\r
+         <tem:producto>\r
+            <!--Optional:-->\r
+            <ml:Departamento>\r
+               <ml:IdDepartamento>3</ml:IdDepartamento>\r
+            </ml:Departamento>\r
+            <!--Optional:-->\r
+            <ml:Descripcion>Agua 600ML</ml:Descripcion>\r
+            <ml:Nombre>Agua</ml:Nombre>\r
+            <!--Optional:-->\r
+            <ml:PrecioUnitario>10</ml:PrecioUnitario>\r
+            <ml:Proveedor>\r
+               <!--Optional:-->\r
+               <ml:IdProveedor>1</ml:IdProveedor>\r
+            </ml:Proveedor>\r
+            <!--Optional:-->\r
+            <ml:Stock>5</ml:Stock>\r
+         </tem:producto>\r
+      </tem:AddEF>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProducto/AddEF"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d7c61eb4-f78b-4b24-a361-aecfadb3a7ea" isOneWay="false" action="http://tempuri.org/IProducto/DeleteEF" name="DeleteEF" bindingOperationName="DeleteEF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="33f15244-29a6-443b-8b48-87d8703bcfbc" name="Eliminar"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DeleteEF>\r
+         <!--Optional:-->\r
+         <tem:producto>\r
+            <ml:IdProducto>21</ml:IdProducto>\r
+         </tem:producto>\r
+      </tem:DeleteEF>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProducto/DeleteEF"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="beea0314-6831-4467-8dc4-0971a3ac88f5" isOneWay="false" action="http://tempuri.org/IProducto/GetAllEF" name="GetAllEF" bindingOperationName="GetAllEF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="162881fa-d97d-47ac-a751-c18c599dd3ed" name="GetAll"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetAllEF/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProducto/GetAllEF"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="debf397a-54ae-4bfd-8c62-92bcbf808d3a" isOneWay="false" action="http://tempuri.org/IProducto/GetByIdEF" name="GetByIdEF" bindingOperationName="GetByIdEF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="199a0832-9050-4747-920d-3c4f36a4d91f" name="GetById"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetByIdEF>\r
+         <!--Optional:-->\r
+         <tem:IdProducto>1</tem:IdProducto>\r
+      </tem:GetByIdEF>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProducto/GetByIdEF"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5c0ad052-2238-49a4-88ac-9da5369728ef" isOneWay="false" action="http://tempuri.org/IProducto/UpdateEF" name="UpdateEF" bindingOperationName="UpdateEF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0af60894-826b-4fa0-968d-95efb5717e59" name="Actualizar"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:10028/Producto.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:UpdateEF>\r
+         <!--Optional:-->\r
+         <tem:producto>\r
+            <!--Optional:-->\r
+            <ml:Departamento>\r
+               <ml:IdDepartamento>2</ml:IdDepartamento>\r
+            </ml:Departamento>\r
+            <!--Optional:-->\r
+            <ml:Descripcion>Tequila Don Julio</ml:Descripcion>\r
+            <!--Optional:-->\r
+            <ml:IdProducto>18</ml:IdProducto>\r
+            <!--Optional:-->\r
+            <ml:Nombre>Don Julio</ml:Nombre>\r
+            <!--Optional:-->\r
+            <ml:PrecioUnitario>800</ml:PrecioUnitario>\r
+            
+            <ml:Proveedor>\r
+               <!--Optional:-->\r
+               <ml:IdProveedor>7</ml:IdProveedor>\r
+            </ml:Proveedor>\r
+            <!--Optional:-->\r
+            <ml:Stock>5</ml:Stock>\r
+         </tem:producto>\r
+      </tem:UpdateEF>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProducto/UpdateEF"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

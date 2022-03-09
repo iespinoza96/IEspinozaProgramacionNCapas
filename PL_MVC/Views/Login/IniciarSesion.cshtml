@@ -1,0 +1,51 @@
+﻿@model ML.Usuario
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bienvenido</title>
+    <link href="~/content/LogIn.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+
+
+
+
+                <div class="login-page">
+                    <div class="form">
+
+                        <form class="login-form">
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Usuario", type = "text", autocomplete = "off" }) @*Caja de texto*@
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Password", type = "password", autocomplete = "off" }) @*Caja de texto*@
+                            <input type="submit" value="Iniciar sesión" />
+                            @Html.ActionLink("Registrarme", "Add", "Login", htmlAttributes: new { @class = "btn btn-success" })
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+            }
+
+        </div>
+    </div>
+
+</body>
+
+
+</html>

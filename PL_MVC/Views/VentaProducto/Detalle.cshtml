@@ -1,0 +1,75 @@
+﻿@model ML.VentaProducto
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>Detalle</h2>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Detalle de su compra</h5>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div style="float:right">
+                @Html.ActionLink("Volver a comprar", "ProductoGetAll", "Venta", htmlAttributes: new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+
+                    <td class="hidden">IdProducto</td>
+                    <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                    <td class="text-center" style=" font-weight:bold;">Precio Unitario</td>
+                    @*<td class="text-center" style=" font-weight:bold;">Stock</td>*@
+                    <td class="text-center" style=" font-weight:bold;">Descripción</td>
+                    <td class="text-center" style=" font-weight:bold;">Imagen</td>
+                    <td class="text-center" style=" font-weight:bold;">Cantidad</td>
+                    <td class="text-center" style=" font-weight:bold;">SubTotal</td>
+                    <td class="text-center" style=" font-weight:bold;">Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ML.VentaProducto ventaProducto in Model.VentaProductos)
+                {
+                    <tr>
+                        @* <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Producto", new { IdProducto = ventaProducto.Producto.IdProducto })"></a></td>*@
+
+                        <td class="hidden">@ventaProducto.Producto.IdProducto</td>
+                        <td>@ventaProducto.Producto.Nombre</td>
+                        <td class="text-center">@ventaProducto.Producto.PrecioUnitario</td>
+                        @*<td class="text-center">@ventaProducto.Producto.Stock</td>*@
+                        <td>@ventaProducto.Producto.Descripcion</td>
+                        @if (ventaProducto.Producto.Imagen != null)
+                        {
+                            <td class="text-center"><img src="data:image/jpeg;base64,@Convert.ToBase64String(ventaProducto.Producto.Imagen)" style=" height:150px; width: 150px;" /></td>
+                        }
+                        else
+                        {
+                            <td class="text-center"><img src="~/Content/SIN-IMAGEN.jpg" style=" height:150px; width:150px;" /></td>
+                        }
+                        <td> <a style="margin-left:15px; margin-right:15px;"> @ventaProducto.Cantidad</a> </td>
+
+                        <td class="text-center">$ @(ventaProducto.Producto.PrecioUnitario * ventaProducto.Cantidad)</td>
+                        <td class="text-center">@ventaProducto.Venta.Total</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

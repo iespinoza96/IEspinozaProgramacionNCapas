@@ -1,0 +1,21 @@
+MENU
+
+                    Console.WriteLine("6.-Agregar ProductoSP");
+                    Console.WriteLine("7.-Actualizar ProductoSP");
+                    Console.WriteLine("8.-Borrar ProductoSP");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("ENTITY FRAMEWORK");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("9.-Seleccionar ProductosEF");
+                    Console.WriteLine("10.-Seleccionar solo un ProductoEF");
+                    Console.WriteLine("11.-Agregar ProductoEF");
+                    Console.WriteLine("12.-Actualizar ProductoEF");
+                    Console.WriteLine("13.-Borrar ProductoEF");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("ENTITY FRAMEWORK UTILIZANDO LINQ");
+                    Console.WriteLine("***********************************");
+                    Console.WriteLine("14.-Seleccionar ProductosLINQ");
+                    Console.WriteLine("15.-Seleccionar solo un ProductoLINQ");
+                    Console.WriteLine("16.-Agregar ProductoLINQ");
+                    Console.WriteLine("17.-Actualizar ProductoLINQ");
+                    Console.WriteLine("18.-Borrar ProductoLINQ");

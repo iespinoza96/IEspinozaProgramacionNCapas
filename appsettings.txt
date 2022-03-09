@@ -1,0 +1,15 @@
+WEP API 
+web.config  
+
+<appSettings>
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+    
+    <add key="URLapi"   value="http://localhost:10037/api"/>
+    <add key="JWT_SECRET_KEY"     value="clave-secreta-api"/>
+    <add key="JWT_AUDIENCE_TOKEN" value="http://localhost:10037/api"/>
+    <add key="JWT_ISSUER_TOKEN"   value="http://localhost:10037/api"/>
+    <add key="JWT_EXPIRE_MINUTES" value="30"/>
+  </appSettings>

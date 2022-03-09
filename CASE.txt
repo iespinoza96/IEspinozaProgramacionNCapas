@@ -1,0 +1,33 @@
+CASE
+
+                        case 6:
+                            PL.Producto.AddSP();//ingresar con stored procedure
+                            break;
+
+                        case 7:
+                            PL.Producto.UpdateSP();//actualizar con stored procedure
+                            break;
+
+                        case 8:
+                            PL.Producto.DeleteSP();//borrar con stored procedure
+                            break;
+
+                        case 9:
+                            PL.Producto.GetAllEF();//seleccionar
+                            break;
+
+                        case 10:
+                            PL.Producto.GetByIdEF();//traer solo uno
+                            break;
+
+                        case 11:
+                            PL.Producto.AddEF();//ingresar con stored procedure
+                            break;
+
+                        case 12:
+                            PL.Producto.UpdateEF();//actualizar con stored procedure
+                            break;
+
+                        case 13:
+                            PL.Producto.DeleteEF();//borrar con stored procedure
+                            break;

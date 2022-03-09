@@ -1,0 +1,2 @@
+ALTER TABLE VentaProducto
+ADD FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta);

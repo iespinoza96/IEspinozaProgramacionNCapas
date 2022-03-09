@@ -1,0 +1,2 @@
+saul1|Saul|Hernandez|Garcia|saul123@gmail.com|123456789|01/02/1996|6666666666|M|1|2
+nikole2|Nikole|Diaz|Medina|nikole26@gmail.com|123456789|26/09/1991|777777777|F|1|3	

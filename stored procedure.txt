@@ -1,0 +1,22 @@
+CREATE PROCEDURE AddVenta
+@Total DECIMAL,
+@Fecha DATETIME
+AS
+	INSERT INTO Venta
+           (Total
+           ,Fecha)
+     VALUES
+           (@Total, @Fecha)
+
+*******************************************
+
+CREATE PROCEDURE AddVentaProducto
+@Cantidad INT,
+@IdProducto INT
+ AS
+	INSERT INTO VentaProducto
+	(Cantidad,
+	 IdProducto)
+	 VALUES (@Cantidad,@IdProducto)
+
+***********************************************

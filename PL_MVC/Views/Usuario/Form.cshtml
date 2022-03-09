@@ -1,0 +1,273 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Usuario</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Form", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true,"Please fix te following errors.")
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @if (Model.Action == "Add")
+                    {
+
+                        @Html.LabelFor(model => model.UserName)
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @id = "txtUserName" })
+                        @Html.ValidationMessageFor(model => model.UserName)
+
+                    }
+                    else
+                    {
+                        @Html.LabelFor(model => model.UserName)
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @id = "txtUserName", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.UserName)
+
+                    }
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Nombre)
+                    @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre", @onkeypress = "return SoloLetras(event, 'lblErrorNombre')", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.Nombre)
+                    <label id="lblErrorNombre"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.ApellidoPaterno)
+                    @Html.TextBoxFor(model => model.ApellidoPaterno, new { @class = "form-control", @id = "txtApellidoPaterno", @onkeypress = "return SoloLetras(event, 'lblErrorApellidoPaterno')", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.ApellidoPaterno)
+                    <label id="lblErrorApellidoPaterno"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.ApellidoMaterno)
+                    @Html.TextBoxFor(model => model.ApellidoMaterno, new { @class = "form-control", @id = "txtApellidoMaterno",@onkeypress = "return SoloLetras(event, 'lblErrorApellidoMaterno')", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.ApellidoMaterno)
+                    <label id="lblErrorApellidoMaterno"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "txtEmail", @onkeypress = "return ValidarEmail(event, 'lblErrorEmail')", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                    <label id="lblErrorEmail"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Password)
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @id = "txtPassword", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                    <label id="lblErrorContrasenia"></label>
+                </div>
+            </div>
+            
+                        <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Password)
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @id = "txtPassword2", @onkeyup = "verificarPassword()", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                    <label id="lblErrorContrasenia"></label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-6">
+                        @Html.LabelFor(model => model.FechaNacimiento)
+                        <div class="form-inline">
+                         @Html.TextBoxFor(model => model.FechaNacimiento, "{0:MM/dd/yyy}", new { @class = "form-control", @id = "txtFechaNacimiento" })
+                         @Html.ValidationMessageFor(model => model.FechaNacimiento)</div>
+                        <label id=""></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Telefono)
+                            @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", @id = "txtTelefono", @onkeypress = "return SoloNumeros(event, 'lblErrorTelefono')", @autocomplete = "off" })
+                            @Html.ValidationMessageFor(model => model.Telefono)
+                            <label id="lblErrorTelefono"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6" style=" margin-top :20px;"  >
+                            @Html.LabelFor(model => model.Sexo)
+
+                                    <label>@Html.RadioButtonFor(model => model.Sexo, "M", new { @class = "form-control", @id = "rbtnSexoM" }) Masculino</label>
+                                    <label>@Html.RadioButtonFor(model => model.Sexo, "F", new { @class = "form-control", @id = "rbtnSexoF" }) Femenino</label>
+
+                            @Html.ValidationMessageFor(model => model.Sexo)
+                        </div>
+                    </div>
+
+                    @*@<div class="form-group">
+                        <div class="col-md-4">
+                            @Html.LabelFor(model => model.Status)
+                            @Html.TextBoxFor(model => model.Status, new { @class = "form-control", @id = "txtStatus" })
+                            @Html.ValidationMessageFor(model => model.Status)
+                        </div>
+                    </div>*@
+
+                     <div class="form-group">
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Rol)
+
+                            @Html.DropDownListFor(model => model.Rol.IdRol, new SelectList(Model.Rol.Roles, "IdRol", "Nombre"), "Selecciona una opción", new { @class = "form-control" })
+
+                            @Html.ValidationMessageFor(model => model.Rol)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="submit" value="Guardar" class="btn btn-success" />
+                            @Html.ActionLink("Regresar", "GetAll", "Usuario", htmlAttributes: new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+
+        }
+
+            </div>
+        </div>
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jqueryui/style.css">
+<script type="text/javascript">
+
+
+    function readURL(input) {
+        if (input.files && input.files[0])
+        {
+            var reader = new FileReader();
+
+            reader.onload = function (e)
+            {
+                $('#ImagenPreview').art('src', e.target.result);
+            }
+            reader.readAsDataURL(input.file[0]);
+        }
+    }
+
+    var j = jQuery.noConflict();
+
+    j(function () {
+        j("#txtFechaNacimiento").datepicker({
+            dateFormat: 'yy/mm/dd',
+            showOn: 'button',
+            buttonImage: "../../Img/calendar.png",
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true
+
+        });
+        $(".ui-datepicker-trigger").css("width", "30px");
+        $(".ui-datepicker-trigger").css("height", "30px");
+    });
+</script>
+
+ <script>
+
+            function SoloLetras(e, controlId) {
+
+                var caracter = e.key;
+
+                if (!/^[a-zA-Z]*$/g.test(caracter)) {
+
+                    $('#' + controlId).text("Solo se aceptan letras");
+                    $('#' + controlId).css({ "color": "red" });
+
+                    return false;
+                }
+                else {
+                    $('#' + controlId).text("");
+                    return true;
+                }
+            }//termina validacion de letras
+
+                            function SoloNumeros(e, controlId) {
+
+                                var caracter = e.key;
+
+                                if (!/^[0-9]+$/g.test(caracter)) {
+
+                                    $('#' + controlId).text("Solo se aceptan numeros");
+                                    $('#' + controlId).css({ "color": "red" });
+
+                                    return false;
+                                }
+                                else {
+                                    $('#' + controlId).text("");
+                                    return true;
+                                }
+                            }//termina validacion de numeros
+
+                            function verificarPassword()
+                            {
+                                pass1 = document.getElementById('txtPassword');
+                                pass2 = document.getElementById('txtPassword2');
+
+                                if (pass1.value != pass2.value)
+                                {
+                                    pass2.style.borderColor = "red";
+                                    $('#lblErrorContrasenia' + controlId).text("Las contraseñas no coinciden");
+                                    $('#lblErrorContrasenia' + controlId).css({ "color": "red" });
+
+                                    return false;
+                                }
+
+                                else
+                                {
+                                    pass1.style.borderColor = "green";
+                                    pass2.style.borderColor = "green";
+                                    $('#lblErrorContrasenia' + controlId).text("");
+
+                                    return true;
+                                }
+                            }//termina validacion de match password
+
+                            function ValidarEmail()
+                            {
+                                var email = document.getElementById("txtEmail").value;
+                                var lblError = docu.getElementById("lblErrorEmail");
+                                lblError.innerHTML = "";
+                                var expr = /^[-\w.%+]{1,64}@@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+                                if (!expr.test(email))
+                                {
+                                    lblError.innerHTML = "El correo NO es valido";
+                                }
+
+                            }
+
+
+                        </script>

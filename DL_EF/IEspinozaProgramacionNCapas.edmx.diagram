@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05630cee66754ba9a00fce93e3f8fd26" Name="Diagram1" ZoomLevel="64" ShowGrid="true" DisplayType="true">
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Departamento" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Producto" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Producto__IdDepa__2A4B4B5E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Area" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.MetodoPago" Width="1.5" PointX="3.375" PointY="8.375" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Proveedor" Width="1.5" PointX="2.875" PointY="11.125" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Departame__IdAre__276EDEB3" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Producto__IdProv__286302EC" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.VentaProducto" Width="1.5" PointX="10.25" PointY="5" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__VentaProd__IdPro__6754599E" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Venta" Width="1.5" PointX="8" PointY="9.125" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Venta__IdMetodoP__6383C8BA" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__VentaProd__IdVen__66603565" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Usuario" Width="1.5" PointX="10.375" PointY="9" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Venta__Username__628FA481" />
+        <EntityTypeShape EntityType="IEspinozaProgramacionNCapasModel.Rol" Width="1.5" PointX="8.125" PointY="13" />
+        <AssociationConnector Association="IEspinozaProgramacionNCapasModel.FK__Usuario__IdRol__6FE99F9F" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
