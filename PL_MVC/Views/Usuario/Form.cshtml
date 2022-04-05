@@ -165,7 +165,6 @@
 <link rel="stylesheet" href="jqueryui/style.css">
 <script type="text/javascript">
 
-
     function readURL(input) {
         if (input.files && input.files[0])
         {
@@ -198,7 +197,7 @@
 
  <script>
 
-            function SoloLetras(e, controlId) {
+    function SoloLetras(e, controlId) {
 
                 var caracter = e.key;
 
@@ -215,7 +214,7 @@
                 }
             }//termina validacion de letras
 
-                            function SoloNumeros(e, controlId) {
+    function SoloNumeros(e, controlId) {
 
                                 var caracter = e.key;
 
@@ -232,7 +231,7 @@
                                 }
                             }//termina validacion de numeros
 
-                            function verificarPassword()
+    function verificarPassword()
                             {
                                 pass1 = document.getElementById('txtPassword');
                                 pass2 = document.getElementById('txtPassword2');
@@ -256,7 +255,7 @@
                                 }
                             }//termina validacion de match password
 
-                            function ValidarEmail()
+    function ValidarEmail()
                             {
                                 var email = document.getElementById("txtEmail").value;
                                 var lblError = docu.getElementById("lblErrorEmail");
@@ -269,5 +268,4 @@
 
                             }
 
-
-                        </script>
+</script>

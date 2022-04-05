@@ -10,7 +10,7 @@ namespace ML
 {
     public class Usuario
     {
-        [Display(Name = "Nombre de Usuario:")]
+        [Display(Name = "Nombre Usuario:")]
         [Required(ErrorMessage = "UserName es requerido")]
         public string UserName { get; set; }
 
@@ -20,7 +20,7 @@ namespace ML
         public string Nombre { get; set; }
 
         [Display(Name = "Apellido Paterno:")]
-        [Required(ErrorMessage = "ApellidoPaterno es requerido")]
+        [Required(ErrorMessage = "Apellido Paterno es requerido")]
         public string ApellidoPaterno { get; set; }
 
         [Display(Name = "Apellido Materno:")]

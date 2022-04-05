@@ -151,12 +151,7 @@ namespace PL_MVC.Controllers
 
 				}
 			}
-			else 
-			{ 
-				ViewBag.Message = "Ocurrió un error al obtener la información" + result.ErrorMessage;
-				return PartialView("ValidationModal");
-				 
-			}
+
 			return View(result);
 		}
 		
@@ -257,5 +252,7 @@ namespace PL_MVC.Controllers
 			ViewBag.Message = "¿Deseas finalizar tu compra?";
 			return PartialView("ValidationModal");
 		}
+
+ 
 	}
 }

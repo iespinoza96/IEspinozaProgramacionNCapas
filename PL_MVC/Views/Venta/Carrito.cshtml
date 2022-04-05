@@ -20,6 +20,7 @@
         </div>
     </div>
 
+
     <div class="row">
         <div class="col-md-12">
             <div style="float:right">
@@ -28,112 +29,121 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered table-responsive">
-                <thead>
-                    <tr>
+    @if (Model.Objects != null)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
 
-                        <td class="hidden">IdProducto</td>
-                        <td class="text-center" style=" font-weight:bold;">Nombre</td>
-                        <td class="text-center" style=" font-weight:bold;">Precio Unitario</td>
-                        <td class="text-center" style=" font-weight:bold;">Stock</td>
-                        <td class="text-center" style=" font-weight:bold;">Descripción</td>
-                        <td class="text-center" style=" font-weight:bold;">Imagen</td>
-                        <td class="text-center" style=" font-weight:bold;">Cantidad</td>
-                        <td class="text-center" style=" font-weight:bold;">SubTotal</td>
-                        <td class="text-center" style=" font-weight:bold;">Eliminar</td>
-                    </tr>
-                </thead>
-                <tbody>
+                            <td class="hidden">IdProducto</td>
+                            <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                            <td class="text-center" style=" font-weight:bold;">Precio Unitario</td>
+                            <td class="text-center" style=" font-weight:bold;">Stock</td>
+                            <td class="text-center" style=" font-weight:bold;">Descripción</td>
+                            <td class="text-center" style=" font-weight:bold;">Imagen</td>
+                            <td class="text-center" style=" font-weight:bold;">Cantidad</td>
+                            <td class="text-center" style=" font-weight:bold;">SubTotal</td>
+                            <td class="text-center" style=" font-weight:bold;">Eliminar</td>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    @*@if (Model.Objects != null)
+                        @foreach (ML.VentaProducto ventaProducto in Model.Objects)
                         {
-                            @*<p class="alert alert-primary" role="alert">Esto es una alerta primaria</p>*@
-                    @*}*@
-                    @*else
-                        {*@
-                    @foreach (ML.VentaProducto ventaProducto in Model.Objects)
-                    {
-                    <tr>
+                            <tr>
 
-                        <td class="hidden">@ventaProducto.Producto.IdProducto</td>
-                        <td>@ventaProducto.Producto.Nombre</td>
-                        <td class="text-center">@ventaProducto.Producto.PrecioUnitario</td>
-                        <td class="text-center">@ventaProducto.Producto.Stock</td>
-                        <td>@ventaProducto.Producto.Descripcion</td>
+                                <td class="hidden">@ventaProducto.Producto.IdProducto</td>
+                                <td>@ventaProducto.Producto.Nombre</td>
+                                <td class="text-center">@ventaProducto.Producto.PrecioUnitario</td>
+                                <td class="text-center">@ventaProducto.Producto.Stock</td>
+                                <td>@ventaProducto.Producto.Descripcion</td>
 
-                        @if (ventaProducto.Producto.Imagen != null)
+                                @if (ventaProducto.Producto.Imagen != null)
                                 {
-                                <td class="text-center"><img src="data:image/jpeg;base64,@Convert.ToBase64String(ventaProducto.Producto.Imagen)" style=" height:150px; width: 150px;" /></td>
+                                    <td class="text-center"><img src="data:image/jpeg;base64,@Convert.ToBase64String(ventaProducto.Producto.Imagen)" style=" height:150px; width: 150px;" /></td>
                                 }
                                 else
                                 {
-                                <td class="text-center"><img src="~/Content/SIN-IMAGEN.jpg" style=" height:150px; width:150px;" /></td>
+                                    <td class="text-center"><img src="~/Content/SIN-IMAGEN.jpg" style=" height:150px; width:150px;" /></td>
                                 }
-                        <td>
-                            @if (ventaProducto.Cantidad > 1)
+                                <td>
+                                    @if (ventaProducto.Cantidad > 1)
                                     {
-                                    <a class="btn btn-danger glyphicon glyphicon-minus" href="@Url.Action("Restar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto })"></a>
+                                        <a class="btn btn-danger glyphicon glyphicon-minus" href="@Url.Action("Restar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto })"></a>
                                     }
                                     else
                                     {
-                                    <a class="btn btn-danger glyphicon glyphicon-minus" href="@Url.Action("Eliminar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Estas seguro que deseas eliminar este producto del carrito?');"></a>
+                                        <a class="btn btn-danger glyphicon glyphicon-minus" href="@Url.Action("Eliminar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Estas seguro que deseas eliminar este producto del carrito?');"></a>
                                     }
 
-                            <a style="margin-left:15px; margin-right:15px;"> @ventaProducto.Cantidad</a>
+                                    <a style="margin-left:15px; margin-right:15px;"> @ventaProducto.Cantidad</a>
 
-                            @if (ventaProducto.Cantidad == ventaProducto.Producto.Stock)
+                                    @if (ventaProducto.Cantidad == ventaProducto.Producto.Stock)
                                     {
 
-                                    <a class="btn btn-success glyphicon glyphicon-plus" href="@Url.Action("Sumar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Ya no existe mas Stock de este producto');"></a>
+                                        <a class="btn btn-success glyphicon glyphicon-plus" href="@Url.Action("Sumar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Ya no existe mas Stock de este producto');"></a>
                                     }
                                     else
                                     {
-                                    <a class="btn btn-success glyphicon glyphicon-plus" href="@Url.Action("Sumar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto })"></a>
+                                        <a class="btn btn-success glyphicon glyphicon-plus" href="@Url.Action("Sumar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto })"></a>
 
                                     }
-                        </td>
+                                </td>
 
-                        <td class="text-center">$ @(ventaProducto.Producto.PrecioUnitario * ventaProducto.Cantidad)</td>
+                                <td class="text-center">$ @(ventaProducto.Producto.PrecioUnitario * ventaProducto.Cantidad)</td>
 
-                        <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Eliminar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Estas seguro que deseas eliminar este producto del carrito?');"></a></td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
-
-
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div style="float:right">
-                        @{
-                                        decimal Total = 0;
-                                        foreach (ML.VentaProducto ventaProducto in Model.Objects)
-                                        {
-                                            Total += ventaProducto.Producto.PrecioUnitario * ventaProducto.Cantidad;
-                                        }
+                                <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Eliminar", "Venta", new { IdProducto = ventaProducto.Producto.IdProducto})" onclick="return confirm('Estas seguro que deseas eliminar este producto del carrito?');"></a></td>
+                            </tr>
                         }
-                        <p>Total:$@Total</p>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="float:right">
+                            @{
+                                decimal Total = 0;
+                                foreach (ML.VentaProducto ventaProducto in Model.Objects)
+                                {
+                                    Total += ventaProducto.Producto.PrecioUnitario * ventaProducto.Cantidad;
+                                }
+                            }
+                            <p>Total:$@Total</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            @*}*@
-            <div class="row">
-                <div class="col-md-12">
-                    <div style="float:right">
-                        <a href="@Url.Action("ModalCompra", "Venta")" class="btn btn-primary" style=" font-weight:bold;">Comprar</a>
-                        @* @Html.ActionLink("Comprar", "Procesar", "Venta", htmlAttributes: new { @class = "btn btn-success" })*@
+                @*}*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="float:right">
+                            <a href="@Url.Action("ModalCompra", "Venta")" class="btn btn-primary" style=" font-weight:bold;">Comprar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
+
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    No se encontraron productos en el carrito
+                </div>
+            </div>
+        </div>  
+    }
+
 </div>
+
+                              
+
+
 
 
 

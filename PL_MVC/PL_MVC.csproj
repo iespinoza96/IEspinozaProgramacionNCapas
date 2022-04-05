@@ -21,6 +21,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -231,6 +233,8 @@
     <Content Include="Img\calendar.png" />
     <Content Include="Img\StatusActivo.png" />
     <Content Include="Img\StatusInactivo.png" />
+    <Content Include="Img\stausActivo.jpg" />
+    <Content Include="Img\stausInactivo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
