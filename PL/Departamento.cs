@@ -8,7 +8,7 @@ namespace PL
 {
     public class Departamento
     {
-        public static void AddEF()//agregar departamentos 
+        public static void Add()//agregar departamentos 
         {
             ML.Departamento departamento = new ML.Departamento();//instancioa de departamento
 
@@ -23,8 +23,11 @@ namespace PL
             //ML.Result result = BL.Departamento.AddEF(departamento); // ENTITY FRAMEWORK
             //ML.Result result = BL.Departamento.AddLINQ(departamento); // LINQ
 
-            ServiceReference1.DepartamentoClient client = new ServiceReference1.DepartamentoClient();
-            var result = client.AddEF(departamento);
+            //ServiceReference1.DepartamentoClient client = new ServiceReference1.DepartamentoClient();
+            //var result = client.AddEF(departamento);
+
+            DepartamentoService.DepartamentoClient departamentoClient = new DepartamentoService.DepartamentoClient();
+            var result = departamentoClient.Add(departamento);
 
             if (result.Correct)
             {

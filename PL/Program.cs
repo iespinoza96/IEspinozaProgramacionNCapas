@@ -16,8 +16,8 @@ namespace PL
 
             //WCF --Departamento 
 
-            //PL.Departamento.AddEF();
-            //Console.ReadKey();
+            PL.Departamento.Add();
+            Console.ReadKey();
 
             //PL.Departamento.UpdateEF();
             //Console.ReadKey();
@@ -48,7 +48,7 @@ namespace PL
             //PL.Producto.GetById();
             //Console.ReadKey();
 
-           
+
 
             //seleccion de entidades 
             //int entidad = 0;
@@ -183,7 +183,7 @@ namespace PL
 
             //        }
 
-            }
+        }
 
       }
 }

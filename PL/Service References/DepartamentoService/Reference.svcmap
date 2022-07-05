@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="92595eef-fa54-4093-9eff-be18abdc2aa5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18738/Departamento.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Departamento.disco" MetadataType="Disco" ID="342ca9b5-26b9-4ccf-90ee-e6ae6f17937a" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?disco" />
+    <MetadataFile FileName="Departamento.wsdl" MetadataType="Wsdl" ID="766f29ff-e4a6-44bd-9b1e-8245782101b7" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?wsdl" />
+    <MetadataFile FileName="Departamento.xsd" MetadataType="Schema" ID="43f553d2-86ab-43e3-bc6c-b12d8df94fda" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd1" />
+    <MetadataFile FileName="Departamento1.xsd" MetadataType="Schema" ID="cc792642-8723-4fb6-b105-f2fe9a957ede" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd0" />
+    <MetadataFile FileName="Departamento2.xsd" MetadataType="Schema" ID="601bdc3d-f4d7-4c61-a2a6-8efc49625ac2" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd2" />
+    <MetadataFile FileName="Departamento3.xsd" MetadataType="Schema" ID="dd7c420d-3a23-47ae-a34f-970152410432" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd5" />
+    <MetadataFile FileName="Departamento4.xsd" MetadataType="Schema" ID="1add9106-5cfc-4434-b3ea-aa67162f3493" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd3" />
+    <MetadataFile FileName="Departamento5.xsd" MetadataType="Schema" ID="f004eaaf-d63f-4c59-9648-313dcfb54a0b" SourceId="1" SourceUrl="http://localhost:18738/Departamento.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

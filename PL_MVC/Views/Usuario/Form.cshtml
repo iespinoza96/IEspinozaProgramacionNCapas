@@ -19,7 +19,7 @@
     <div class="col-md-12">
         @using (Html.BeginForm("Form", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            @Html.ValidationSummary(true,"Please fix te following errors.")
+            @Html.ValidationSummary(true, "Please fix te following errors.")
 
             <div class="form-group">
                 <div class="col-md-6">
@@ -63,7 +63,7 @@
             <div class="form-group">
                 <div class="col-md-6">
                     @Html.LabelFor(model => model.ApellidoMaterno)
-                    @Html.TextBoxFor(model => model.ApellidoMaterno, new { @class = "form-control", @id = "txtApellidoMaterno",@onkeypress = "return SoloLetras(event, 'lblErrorApellidoMaterno')", @autocomplete = "off" })
+                    @Html.TextBoxFor(model => model.ApellidoMaterno, new { @class = "form-control", @id = "txtApellidoMaterno", @onkeypress = "return SoloLetras(event, 'lblErrorApellidoMaterno')", @autocomplete = "off" })
                     @Html.ValidationMessageFor(model => model.ApellidoMaterno)
                     <label id="lblErrorApellidoMaterno"></label>
                 </div>
@@ -86,11 +86,11 @@
                     <label id="lblErrorContrasenia"></label>
                 </div>
             </div>
-            
-                        <div class="form-group">
+
+            <div class="form-group">
                 <div class="col-md-6">
                     @Html.LabelFor(model => model.Password)
-                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @id = "txtPassword2", @onkeyup = "verificarPassword()", @autocomplete = "off" })
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @id = "txtPassword2", @onblur = "verificarPassword()", @autocomplete = "off" })
                     @Html.ValidationMessageFor(model => model.Password)
                     <label id="lblErrorContrasenia"></label>
                 </div>
@@ -99,63 +99,64 @@
 
             <div class="form-group">
                 <div class="col-md-6">
-                        @Html.LabelFor(model => model.FechaNacimiento)
-                        <div class="form-inline">
-                         @Html.TextBoxFor(model => model.FechaNacimiento, "{0:MM/dd/yyy}", new { @class = "form-control", @id = "txtFechaNacimiento" })
-                         @Html.ValidationMessageFor(model => model.FechaNacimiento)</div>
-                        <label id=""></label>
-                        </div>
+                    @Html.LabelFor(model => model.FechaNacimiento)
+                    <div class="form-inline">
+                        @Html.TextBoxFor(model => model.FechaNacimiento, "{0:MM/dd/yyy}", new { @class = "form-control", @id = "txtFechaNacimiento" })
+                        @Html.ValidationMessageFor(model => model.FechaNacimiento)
                     </div>
+                    <label id=""></label>
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Telefono)
-                            @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", @id = "txtTelefono", @onkeypress = "return SoloNumeros(event, 'lblErrorTelefono')", @autocomplete = "off" })
-                            @Html.ValidationMessageFor(model => model.Telefono)
-                            <label id="lblErrorTelefono"></label>
-                        </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Telefono)
+                    @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", @id = "txtTelefono", @onkeypress = "return SoloNumeros(event, 'lblErrorTelefono')", @autocomplete = "off" })
+                    @Html.ValidationMessageFor(model => model.Telefono)
+                    <label id="lblErrorTelefono"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6" style=" margin-top :20px;">
+                    @Html.LabelFor(model => model.Sexo)
+
+                    <label>@Html.RadioButtonFor(model => model.Sexo, "M", new { @class = "form-control", @id = "rbtnSexoM" }) Masculino</label>
+                    <label>@Html.RadioButtonFor(model => model.Sexo, "F", new { @class = "form-control", @id = "rbtnSexoF" }) Femenino</label>
+
+                    @Html.ValidationMessageFor(model => model.Sexo)
+                </div>
+            </div>
+
+            @*@<div class="form-group">
+                    <div class="col-md-4">
+                        @Html.LabelFor(model => model.Status)
+                        @Html.TextBoxFor(model => model.Status, new { @class = "form-control", @id = "txtStatus" })
+                        @Html.ValidationMessageFor(model => model.Status)
                     </div>
+                </div>*@
 
-                    <div class="form-group">
-                        <div class="col-md-6" style=" margin-top :20px;"  >
-                            @Html.LabelFor(model => model.Sexo)
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Rol)
 
-                                    <label>@Html.RadioButtonFor(model => model.Sexo, "M", new { @class = "form-control", @id = "rbtnSexoM" }) Masculino</label>
-                                    <label>@Html.RadioButtonFor(model => model.Sexo, "F", new { @class = "form-control", @id = "rbtnSexoF" }) Femenino</label>
+                    @Html.DropDownListFor(model => model.Rol.IdRol, new SelectList(Model.Rol.Roles, "IdRol", "Nombre"), "Selecciona una opción", new { @class = "form-control" })
 
-                            @Html.ValidationMessageFor(model => model.Sexo)
-                        </div>
-                    </div>
+                    @Html.ValidationMessageFor(model => model.Rol)
+                </div>
+            </div>
 
-                    @*@<div class="form-group">
-                        <div class="col-md-4">
-                            @Html.LabelFor(model => model.Status)
-                            @Html.TextBoxFor(model => model.Status, new { @class = "form-control", @id = "txtStatus" })
-                            @Html.ValidationMessageFor(model => model.Status)
-                        </div>
-                    </div>*@
-
-                     <div class="form-group">
-                        <div class="col-md-6">
-                            @Html.LabelFor(model => model.Rol)
-
-                            @Html.DropDownListFor(model => model.Rol.IdRol, new SelectList(Model.Rol.Roles, "IdRol", "Nombre"), "Selecciona una opción", new { @class = "form-control" })
-
-                            @Html.ValidationMessageFor(model => model.Rol)
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <input type="submit" value="Guardar" class="btn btn-success" />
-                            @Html.ActionLink("Regresar", "GetAll", "Usuario", htmlAttributes: new { @class = "btn btn-danger" })
-                        </div>
-                    </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <input type="submit" value="Guardar" class="btn btn-success" />
+                    @Html.ActionLink("Regresar", "GetAll", "Usuario", htmlAttributes: new { @class = "btn btn-danger" })
+                </div>
+            </div>
 
         }
 
-            </div>
-        </div>
+    </div>
+</div>
 
 <meta charset="utf-8">
 
@@ -166,12 +167,10 @@
 <script type="text/javascript">
 
     function readURL(input) {
-        if (input.files && input.files[0])
-        {
+        if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e)
-            {
+            reader.onload = function (e) {
                 $('#ImagenPreview').art('src', e.target.result);
             }
             reader.readAsDataURL(input.file[0]);
@@ -195,77 +194,73 @@
     });
 </script>
 
- <script>
+<script>
 
     function SoloLetras(e, controlId) {
 
-                var caracter = e.key;
+        var caracter = e.key;
 
-                if (!/^[a-zA-Z]*$/g.test(caracter)) {
+        if (!/^[a-zA-Z]*$/g.test(caracter)) {
 
-                    $('#' + controlId).text("Solo se aceptan letras");
-                    $('#' + controlId).css({ "color": "red" });
+            $('#' + controlId).text("Solo se aceptan letras");
+            $('#' + controlId).css({ "color": "red" });
 
-                    return false;
-                }
-                else {
-                    $('#' + controlId).text("");
-                    return true;
-                }
-            }//termina validacion de letras
+            return false;
+        }
+        else {
+            $('#' + controlId).text("");
+            return true;
+        }
+    }//termina validacion de letras
 
     function SoloNumeros(e, controlId) {
 
-                                var caracter = e.key;
+        var caracter = e.key;
 
-                                if (!/^[0-9]+$/g.test(caracter)) {
+        if (!/^[0-9]+$/g.test(caracter)) {
 
-                                    $('#' + controlId).text("Solo se aceptan numeros");
-                                    $('#' + controlId).css({ "color": "red" });
+            $('#' + controlId).text("Solo se aceptan numeros");
+            $('#' + controlId).css({ "color": "red" });
 
-                                    return false;
-                                }
-                                else {
-                                    $('#' + controlId).text("");
-                                    return true;
-                                }
-                            }//termina validacion de numeros
+            return false;
+        }
+        else {
+            $('#' + controlId).text("");
+            return true;
+        }
+    }//termina validacion de numeros
 
-    function verificarPassword()
-                            {
-                                pass1 = document.getElementById('txtPassword');
-                                pass2 = document.getElementById('txtPassword2');
+    function verificarPassword() {
+        pass1 = document.getElementById('txtPassword');
+        pass2 = document.getElementById('txtPassword2');
 
-                                if (pass1.value != pass2.value)
-                                {
-                                    pass2.style.borderColor = "red";
-                                    $('#lblErrorContrasenia' + controlId).text("Las contraseñas no coinciden");
-                                    $('#lblErrorContrasenia' + controlId).css({ "color": "red" });
+        if (pass1.value != pass2.value) {
+            pass1.style.borderColor = "red";
+            pass2.style.borderColor = "red";
+            $('#lblErrorContrasenia' + controlId).text("Las contraseñas no coinciden");
+            $('#lblErrorContrasenia' + controlId).css({ "color": "red" });
 
-                                    return false;
-                                }
+            return false;
+        }
 
-                                else
-                                {
-                                    pass1.style.borderColor = "green";
-                                    pass2.style.borderColor = "green";
-                                    $('#lblErrorContrasenia' + controlId).text("");
+        else {
+            pass1.style.borderColor = "green";
+            pass2.style.borderColor = "green";
+            $('#lblErrorContrasenia' + controlId).text("");
 
-                                    return true;
-                                }
-                            }//termina validacion de match password
+            return true;
+        }
+    }//termina validacion de match password
 
-    function ValidarEmail()
-                            {
-                                var email = document.getElementById("txtEmail").value;
-                                var lblError = docu.getElementById("lblErrorEmail");
-                                lblError.innerHTML = "";
-                                var expr = /^[-\w.%+]{1,64}@@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
-                                if (!expr.test(email))
-                                {
-                                    lblError.innerHTML = "El correo NO es valido";
-                                }
+    function ValidarEmail() {
+        var email = document.getElementById("txtEmail").value;
+        var lblError = docu.getElementById("lblErrorEmail");
+        lblError.innerHTML = "";
+        var expr = /^[-\w.%+]{1,64}@@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+        if (!expr.test(email)) {
+            lblError.innerHTML = "El correo NO es valido";
+        }
 
-                            }
+    }
 
 </script>

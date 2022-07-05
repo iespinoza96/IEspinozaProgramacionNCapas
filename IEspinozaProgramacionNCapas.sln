@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{3F2A458C-91FA-42CE-B6FA-934641C9E511}"
 EndProject
@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML", "ML\ML.csproj", "{5399
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{E8C19DB5-7080-4A65-8423-020A83F5B23B}"
 	ProjectSection(ProjectDependencies) = postProject
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB} = {C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}
 		{E150165E-72FE-4581-80CB-9866EAA661FF} = {E150165E-72FE-4581-80CB-9866EAA661FF}
 	EndProjectSection
 EndProject
@@ -18,12 +19,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL_EF", "DL_EF\DL_EF.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_MVC", "PL_MVC\PL_MVC.csproj", "{FAC2D794-C51F-4A68-876D-D9A20ED883FD}"
 	ProjectSection(ProjectDependencies) = postProject
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB} = {C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}
 		{E150165E-72FE-4581-80CB-9866EAA661FF} = {E150165E-72FE-4581-80CB-9866EAA661FF}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WCF", "SL_WCF\SL_WCF.csproj", "{E150165E-72FE-4581-80CB-9866EAA661FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WEPAPI", "SL_WEPAPI\SL_WEPAPI.csproj", "{5F80E475-272E-4B12-9561-5C92C88A4606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WCF1", "SL_WCF1\SL_WCF1.csproj", "{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +67,15 @@ Global
 		{5F80E475-272E-4B12-9561-5C92C88A4606}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F80E475-272E-4B12-9561-5C92C88A4606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F80E475-272E-4B12-9561-5C92C88A4606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02B4CF3B-A385-4968-89D0-07D833687B09}
 	EndGlobalSection
 EndGlobal

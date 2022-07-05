@@ -56,6 +56,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Service References\DepartamentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +80,28 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\DepartamentoService\Departamento.wsdl" />
+    <None Include="Service References\DepartamentoService\Departamento.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\Departamento1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\Departamento2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\Departamento3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\Departamento4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\Departamento5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DepartamentoService\PL.DepartamentoService.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\Departamento.wsdl" />
     <None Include="Service References\ServiceReference1\Departamento.xsd">
       <SubType>Designer</SubType>
@@ -134,6 +161,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DepartamentoService\" />
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceProducto\" />
   </ItemGroup>
@@ -163,6 +191,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DepartamentoService\Departamento.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DepartamentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DepartamentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DepartamentoService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
