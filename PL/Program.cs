@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,25 @@ namespace PL
         static void Main(string[] args)
         {
 
+
+
+            //For long/full month names for spanish("es") culture
+            string fecha = new DateTime(2022, 8, 1).ToString("MMMM", CultureInfo.CreateSpecificCulture("ES"));
+            Console.WriteLine(fecha);
+
+            Console.Read();
+
+            // The example displays the following output:
+            //    Today is June 10, 2011.
+            //    The current date and time: 06/10/11 15:24:16 +00:00
+
             //ServiceReferenceDepartamento.ServiceDepartamentoClient TestServicio = new ServiceReferenceDepartamento.ServiceDepartamentoClient();
             //var Result = TestServicio.Saludar("Isaac");
 
             //WCF --Departamento 
 
-            PL.Departamento.Add();
-            Console.ReadKey();
+            //PL.Departamento.Add();
+            //Console.ReadKey();
 
             //PL.Departamento.UpdateEF();
             //Console.ReadKey();
@@ -183,8 +196,9 @@ namespace PL
 
             //        }
 
+
         }
 
-      }
+    }
 }
 

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WEPAPI", "SL_WEPAPI\SL_W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WCF1", "SL_WCF1\SL_WCF1.csproj", "{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_API", "Web_API\Web_API.csproj", "{1DA18312-71ED-4F2D-8420-DC36F99120B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6001A4B-72D6-4C7F-8CD7-0F72247FF3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA18312-71ED-4F2D-8420-DC36F99120B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA18312-71ED-4F2D-8420-DC36F99120B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA18312-71ED-4F2D-8420-DC36F99120B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA18312-71ED-4F2D-8420-DC36F99120B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

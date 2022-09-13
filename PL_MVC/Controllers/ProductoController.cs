@@ -53,7 +53,7 @@ namespace PL_MVC.Controllers
 
                 producto.Departamento.Area = new ML.Area();
                 producto.Departamento.Area.Areas = resultArea.Objects;
-
+                
                 if (IdProducto == null)
                 {
                     return View(producto);

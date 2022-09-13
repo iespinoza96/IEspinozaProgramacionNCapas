@@ -13,8 +13,8 @@ namespace DL
     
         public static string GetConnectionString()
         {
-            string Conexion = ConfigurationManager.ConnectionStrings["IEspinozaProgramacionNCapas"].ConnectionString;
-            return Conexion;
+            //string Conexion = ConfigurationManager.ConnectionStrings["IEspinozaProgramacionNCapas"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["IEspinozaProgramacionNCapas"].ConnectionString;
         }
     }
 }

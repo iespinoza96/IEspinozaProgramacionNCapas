@@ -15,7 +15,7 @@ namespace BL
         public static ML.Result AddSP(ML.Departamento departamento)//Stored Procedure agregar datos 
         {
             ML.Result result = new ML.Result();
-            try
+            try  
             {
                 using (SqlConnection context = new SqlConnection(DL.Conexion.GetConnectionString()))
                 {
@@ -51,10 +51,10 @@ namespace BL
                         }
                     }
                 }
-
+                
 
             }
-
+       
             catch (Exception ex)
             {
                 result.Correct = false;
@@ -119,6 +119,20 @@ namespace BL
                 result.Correct = false;
                 result.ErrorMessage = ex.Message;
                 result.Ex = ex;
+            }
+
+            finally
+            {
+
+            }
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                
             }
 
             return result;
