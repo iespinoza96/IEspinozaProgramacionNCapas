@@ -182,7 +182,7 @@ namespace PL_MVC.Controllers
                 return PartialView("ValidationModal");
             }
         }
-
+            
         public JsonResult GetDepartamento(int IdArea)
         {
             ML.Departamento depto = new ML.Departamento();
